@@ -121,10 +121,15 @@ git config --global user.email "메일주소"
 git config --global user.name "유저이름"
 ```
 - git은 협업 툴이기 때문에 작성자가 누군지 명시해주어야 함(최초 1회만)
-깃헙 잔디 -> repo 사용자와 commit 사용자 일치해야 함
+- 깃헙 잔디 → repo 사용자와 commit 사용자 일치해야 함
 
-
+```bash
+$ git config --global --list
+```
+- 작성자 정보 확인
 > commit 기록 확인
 ```bash
 git log
 ```
+![alt text](image-12.png)
+
