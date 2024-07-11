@@ -28,9 +28,8 @@ Google Drive - 새 문서 - Google Docs - 버전 기록
 - 중앙서버의 장애나 손실에 대비하여 백업과 복구가 용이
 - 인터넷이 연결되지 않아도 작업 가능(나중에 중앙 서버와 동기화)
 
-.
-
-**git의 역할**
+---
+### git의 역할
 - 코드의 버전(히스토리)관리
     - 개발되어 온 과정 파악
 - 이전 버전과의 변경사항 비교
@@ -42,7 +41,7 @@ Google Drive - 새 문서 - Google Docs - 버전 기록
 - Staging Area
 - Repository
 
-> ※ 위 영역들은 가상의 영역임 ※
+> **※ 위 영역들은 가상의 영역임 ※**
 
 **Working Directory**
 - 실제 작업 중인 파일들이 위치하는 영역 (수정, 생성, 삭제 등)
@@ -65,10 +64,14 @@ Google Drive - 새 문서 - Google Docs - 버전 기록
 - 로컬 저장소 설정(초기화)
 - git의 버전관리를 시작할 디렉토리에서 진행
 - 기능 단위로 실행하게 됨
+
+```bash
+git init
+```
 ![alt text](image-11.png)
 
-> `.git/` 폴더 생성됨\
-> git으로 관리되는 폴더는 (master) 표시가 뜸 (branch)
+-  `.git/` 폴더 생성됨\
+- git으로 관리되는 폴더는 (master) 표시가 뜸 (branch)
 
 ## git add
 
@@ -81,20 +84,47 @@ Google Drive - 새 문서 - Google Docs - 버전 기록
 - Staging Area에 있는 파일들을 저장소에 기록
 - 해당 시점의 버전을 생성하고 변경 이력을 남김
 
-WD에서 작업 -> SA에 파일 올림 (git add) -> Repo에 commit (git commit)
 
-  (use "git rm --cached <file>..." to unstage)
+--- 
+.
 
+`WD에서 작업 → SA에 파일 올림 (git add) → Repo에 commit (git commit)`
 
+.
+
+> git status 확인
 ```bash
 git status
 ```
-> 빨간색: WD 영역에 있으나 버전 이력이 없음\
-`git add` 시 SA에 포함됨
+- 빨간색: WD 영역에 있으나 버전 이력이 없음\
 
+
+`git add` 시 SA에 포함됨
+> git add
 ```bash
 git add README.md
 git status
 ```
-> README.md만 초록색으로 바뀜 (SA에 추가됨)
+- README.md만 초록색으로 바뀜 (SA에 추가됨)
 
+
+> Commit
+```bash
+git commit -m '메시지 내용'
+```
+- commit 찍을 때 이력내용을 남겨야함 (title로 요약)
+
+
+> 작성자 명시
+```bash
+git config --global user.email "메일주소"
+git config --global user.name "유저이름"
+```
+- git은 협업 툴이기 때문에 작성자가 누군지 명시해주어야 함(최초 1회만)
+깃헙 잔디 -> repo 사용자와 commit 사용자 일치해야 함
+
+
+> commit 기록 확인
+```bash
+git log
+```
